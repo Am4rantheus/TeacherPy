@@ -1,2 +1,76 @@
 # TeacherPy
-A Python-based tool for creating and managing lesson plans, automated PDF creation of worksheets with and without answer keys, and various options for easy file management for teachers!
+
+TeacherPy ist ein pythonbasiertes Werkzeug zur Erstellung und Verwaltung von Stundenverlaufsplänen, der automatisierten PDF-Erstellung von Arbeitsblättern mit und ohne Erwartungsbildern und vielfältigen Möglichkeiten zur einfachen Dateiverwaltung für Lehrerinnen und Lehrer!
+
+## Installation
+
+1. Python im Windows Store installieren (empfohlen wird Python 3.12)
+2. Windows-Taste drücken, "cmd" eingeben, Konsole öffnen
+3. `cd /PfadZuTeacherPy/` einfügen, mit Enter bestätigen (wechselt in das Verzeichnis von TeacherPy)
+4. Im Verzeichnis `python3 setup.py` als Befehl eingeben (führt im Ordner TeacherPy das setup.py Skript aus)
+5. setup.py installiert alle benötigten Pakete und fragt nach Pfaden zu Basisordner, USB-Ordner und ob ein Notiz-Ordner gewünscht ist, außerdem nach den gewünschten Optionen für die zukünftig zu planenden Stunden.
+6. Ist die Installation erfolgreich, wird eine Verknüpfung "TeacherPy" im Verzeichnis von TeacherPy erstellt, die auf den Desktop verschoben werden kann.
+7. Beim Doppelklick auf die Verknüpfung öffnet sich das Programm.
+
+## TeacherPy - Funktionen
+
+TeacherPy bietet drei Optionen:
+1. Das Erstellen einer neuen Stunde im Basisordner.
+2. Das Finalisieren einer Stunde aus dem Basisordner. 
+3. Das Archivieren von gehaltenen Stunden.
+
+### Eine neue Stunde erstellen
+
+1. Starten Sie TeacherPy über die Verknüpfung "TeacherPy".
+2. Wählen Sie die Option "1. Eine neue Stunde erstellen"
+3. Vergeben Sie einen Namen für die neu zu erstellende Stundeneinheit
+4. Geben Sie den gewünschten Zeitslot, Klasse, Raumnummer, Datum, den Lernbereich und das Stundenthema ein. Der Name der Lehrperson ist in der Regel Ihr eigener und muss nicht noch einmal angepasst werden.
+   
+   TeacherPy erstellt im Basisordner einen Unterordner mit dem Namen der Stundeneinheit, darin einen weiteren Unterordner "Ressources" für Bilder, Dokumente etc, die Sie später nicht mehr benötigen und einen Stundenverlaufsplan (SVP_Name der Stunde.docx)
+   
+5. In der geöffneten SVP_Datei können Sie nun wie gewohnt Ihren Unterricht planen. Achten Sie darauf, dass Sie eventuell erstellte Arbeitsblätter nach dem Schema AB_Name_des_Blattes im gleichen Verzeichnis speichern, in dem sich die SVP_Datei befindet. 
+
+   > **Hinweis:** Für eine optimale Verwendung von TeacherPy wird empfohlen, die Namen der Arbeitsblätter 1zu1 in die Tabellenspalte Materialien/Medien einzutragen. Das Programm kann diese Informationen auslesen und später verwenden. Dazu ist es unerlässlich, die Dateien mit dem Kürzel AB_ zu versehen. 
+
+### Eine Stunde finalisieren
+
+1. Wählen Sie die Option "2. Eine Stunde finalisieren"
+2. Wählen Sie aus den verfügbaren Unterordnern Ihres Basisordners denjenigen aus, den Sie finalisieren möchten
+3. Das Programm sucht den Ordner nun nach sämtlichen Office-Dateien ab, welche Arbeitsblätter (AB_), Leistungsbewertung (LB_) sowie Stundenverlaufsplan (SVP_) im Dateinamen enthalten
+4. Sie werden einzeln gefragt, ob Sie ein Erwartungsbild mit Kommentaren erstellen lassen wollen. Diese Funktion erstellt eine zusätzliche PDF mit sämtlichen Kommentaren, die als Erwartungsbilder erstellt worden sind. 
+5. Lehnen Sie diese Option ab, wird lediglich die Ausgangsdatei ohne Kommentare in eine PDF umgewandelt. 
+6. Nachdem alle ABs sowie LBs im Ordner konvertiert wurden, wird die SVP_Datei ebenfalls konvertiert. 
+7. Sie werden gefragt, ob Sie die konvertierten Dateien zusammenführen möchten. Dieser Schritt bietet sich vor allem an, wenn Sie mit einem E-Ink-Tablet arbeiten und eine Gesamtdatei samt Erwartungsbildern und ABs benötigen. Die Dateien werden hierbei in der Reihenfolge angehängt, in der sie in der Tabelle genannt werden 
+8. INBOX Funktion ist in der Testphase, bitte lehnen Sie diese ab
+9. Sie werden gefragt, ob Sie die Dateien direkt auf den USB-Stick kopieren möchten. Wählen Sie die gewünschte Option.
+10. Ihre Dateien werden auf den USB-Stick kopiert.
+
+### Eine Stunde archivieren
+
+1. Wählen Sie die Option "3. Eine abgeschlossene Stunde archivieren"
+2. TeacherPy durchsucht Ihren USB-Ordner nach Unterordnern, wählen Sie den gewünschten Ordner aus
+3. Die im Ordner befindlichen Dateien werden aufgelistet
+4. Sie haben nun die Möglichkeiten:
+   a) die auf dem USB-Stick befindlichen Dateien zurück in den Basisordner zu verschieben (dabei werden die vorhandenen Dateien überschrieben)
+   b) nur neu erstellte Dateien auf dem Stick in den Basisordner zu verschieben
+   c) den gesamten Ordner (Bilder, Präsentationen, Videos, Dokumente, Unterordner) in den Basisordner zu verschieben
+5. Sie werden gefragt, ob Sie die Dateien auf dem Stick behalten möchten oder nicht. Verneinen Sie dies, werden die Dateien gelöscht!
+
+## Allgemeine Nutzungshinweise
+
+Abkürzungen, mit denen TeacherPy aktuell arbeitet sind:
+- SVP_ für Stundenverlaufspläne
+- AB_ für Arbeitsblätter
+- LB_ für Leistungsbewertungen
+
+In der project-config.json lassen sich weitere Funktionen aktivieren und deaktivieren.
+
+## Fehlerbehebung
+
+
+
+## Lizenz
+
+©Am4ranth/Am4rantheus
+
+Dieses Tool ist zur freien Nutzung angedacht. Jede/r Benutzer/-in hat das Recht, das Programm beliebig oft zu vervielfältigen und zu verändern.
