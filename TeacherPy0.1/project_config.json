@@ -1,0 +1,36 @@
+{
+    "base_folder_path": "Pfad\\zum\\Ordner",
+    "notes_folder_path": "Pfad\\zum\\Ordner",
+    "create_note": false,
+    "svp_options": {
+        "time_slots": {
+            "1": [
+                "08:05",
+                "9:00"
+            ],
+            "2": [
+                "9:10",
+                "10:40"
+            ],
+            "3": [
+                "11:00",
+                "12:30"
+            ],
+            "4": [
+                "13:30",
+                "15:00"
+            ]
+        },
+        "prompts": {
+            "Klasse/Kurs": true,
+            "Raumnummer": true,
+            "Datum": true,
+            "Lernbereich": true,
+            "Stundenthema": true,
+            "Lehrperson": true
+        },
+        "default_teacher": "",
+        "include_abbreviations": false
+    },
+    "usb_path": "Pfad\\zum\\Ordner"
+}

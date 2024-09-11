@@ -1,0 +1,16 @@
+{
+    "colors": {
+        "AB_": "BLUE",
+        "LB_": "YELLOW",
+        "SVP_": "GREEN",
+        "AB_LIGHT": "LIGHTBLUE_EX",
+        "LB_LIGHT": "LIGHTYELLOW_EX",
+        "DOCX": "BLUE",
+        "PDF": "LIGHTBLUE_EX",
+        "ERWARTUNGSBILD": "CYAN",
+        "SVP_PDF": "LIGHTGREEN_EX",
+        "PRESENTATION": "RED",
+        "VIDEO": "MAGENTA",
+        "FOLDER": "YELLOW"
+    }
+}
