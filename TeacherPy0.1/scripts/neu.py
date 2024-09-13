@@ -1,8 +1,11 @@
+
 import os
+# -*- coding: utf-8 -*-
 import sys
 import shutil
 import json
 import win32com.client
+import pywintypes
 import subprocess
 from docx import Document
 import time
@@ -119,6 +122,11 @@ def create_project_structure(config, layout):
         doc = word.Documents.Add(TEMPLATE_PATH)
         doc.SaveAs(word_file_path, FileFormat=16)  # FileFormat=16 is for .docx
         doc.Close()
+    except pywintypes.com_error as e:
+        print(f"COM-Fehler aufgetreten: {e}")
+        print(f"TEMPLATE_PATH: {TEMPLATE_PATH}")
+        print(f"word_file_path: {word_file_path}")
+        # Hier könnten Sie zusätzliche Fehlerbehandlung oder Logging hinzufügen
     finally:
         word.Quit()
     
