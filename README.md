@@ -14,6 +14,8 @@ TeacherPy ist ein pythonbasiertes Werkzeug zur Erstellung und Verwaltung von Stu
 5. Ist die Installation erfolgreich, wird eine Verknüpfung "TeacherPy" im Verzeichnis von TeacherPy erstellt, die auf den Desktop verschoben werden kann. ![Verknüpfung](https://github.com/user-attachments/assets/bd0a9693-1d53-4885-b9d7-b07acc986185)
 
 6. Beim Doppelklick auf die Verknüpfung öffnet sich das Programm.
+> **Hinweis:** Sollte TeacherPy das erste Mal ausgeführt werden, kann es bei der Öffnung der SVP_Datei.docx zu einer Fehlermeldung kommen. In diesem Fall navigieren Sie bitte ins Verzeichnis /TeacherPy/Vorlage und öffnen Sie einmalig die Datei SVP_Vorlage.dotx. Nun müssen Sie die geschützte Ansicht aufheben, indem Sie die Berechtigung zur Bearbeitung erteilen. Erstellen Sie danach die Stunde erneut mit dem gleichen Namen und setzten Sie die Bearbeitung fort. 
+
 
 ## TeacherPy - Funktionen
 
@@ -27,6 +29,7 @@ TeacherPy bietet drei Optionen:
 1. Starten Sie TeacherPy über die Verknüpfung "TeacherPy".
 2. Wählen Sie die Option "1. Eine neue Stunde erstellen"
 3. Vergeben Sie einen Namen für die neu zu erstellende Stundeneinheit ![Bsp neue Stunde 1](https://github.com/user-attachments/assets/d5747bb3-57a0-40a5-ad12-c6641650fe1a)
+   > **Hinweis:** Sollte TeacherPy das erste Mal ausgeführt werden, kann es bei der Öffnung der SVP_Datei.docx zu einer Fehlermeldung kommen. In diesem Fall navigieren Sie bitte ins Verzeichnis /TeacherPy/Vorlage und öffnen Sie einmalig die Datei SVP_Vorlage.dotx. Nun müssen Sie die geschützte Ansicht aufheben, indem Sie die Berechtigung zur Bearbeitung erteilen. Erstellen Sie danach die Stunde erneut mit dem gleichen Namen und setzten Sie die Bearbeitung fort. 
 
 4. Geben Sie den gewünschten Zeitslot, Klasse, Raumnummer, Datum, den Lernbereich und das Stundenthema ein. Der Name der Lehrperson ist in der Regel Ihr eigener und muss nicht noch einmal angepasst werden. ![Bsp neue Stunde mit Optionen](https://github.com/user-attachments/assets/47aea1c0-d777-45c7-9d86-5627563061f3)
 
