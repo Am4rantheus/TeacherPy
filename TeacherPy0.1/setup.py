@@ -3,6 +3,7 @@ import sys
 import subprocess
 import json
 import time
+import win32com.client
 
 # Ermittle den absoluten Pfad zum aktuellen Skript
 current_script_path = os.path.abspath(__file__)
