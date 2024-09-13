@@ -142,8 +142,9 @@ def update_config():
 
     print("Konfiguration wurde erfolgreich aktualisiert.")
 
-def open_and_close_template_files():
-    template_dir = os.path.join(current_dir, 'Vorlage')  # Verzeichnis auf 'Vorlage' geändert
+
+def open_and_grant_permissions_to_templates():
+    template_dir = os.path.join(current_dir, 'Vorlage')
     if not os.path.exists(template_dir):
         print(f"Verzeichnis {template_dir} nicht gefunden.")
         return
@@ -154,14 +155,8 @@ def open_and_close_template_files():
         print("Keine .dotx oder .ott Dateien im Vorlagen-Verzeichnis gefunden.")
         return
 
-    print("Öffne Vorlagendateien...")
+    print("Öffne Vorlagendateien und erteile Berechtigungen...")
     
-    try:
-        import win32com.client
-    except ImportError:
-        print("win32com.client konnte nicht importiert werden. Stellen Sie sicher, dass pywin32 installiert ist.")
-        return
-
     word = win32com.client.Dispatch("Word.Application")
     word.Visible = False
 
@@ -170,16 +165,19 @@ def open_and_close_template_files():
         print(f"Öffne {file}...")
         try:
             doc = word.Documents.Open(file_path)
-            # Warte kurz, um eventuelle Dialoge zu ermöglichen
-            time.sleep(2)
-            doc.Close()
-            print(f"{file} wurde geöffnet und geschlossen.")
+            # Hier können Sie zusätzliche Aktionen durchführen, um Berechtigungen zu erteilen
+            # Zum Beispiel:
+            # doc.Permission.AllowEditing = True
+            # doc.Permission.AllowPrinting = True
+            time.sleep(2)  # Warte kurz, um eventuelle Dialoge zu ermöglichen
+            doc.Close(SaveChanges=True)
+            print(f"{file} wurde geöffnet, Berechtigungen erteilt und geschlossen.")
         except Exception as e:
             print(f"Fehler beim Öffnen von {file}: {str(e)}")
 
     word.Quit()
     print("Alle Vorlagendateien wurden verarbeitet.")
-
+    
 def create_shortcut():
     try:
         import winshell
@@ -217,8 +215,8 @@ def main():
     required = get_required_libraries()
     install_missing_libraries(required)
 
-    print("Öffne und schließe Vorlagendateien...")
-    open_and_close_template_files()
+    print("Öffne Vorlagendateien und erteile Berechtigungen...")
+    open_and_grant_permissions_to_templates()
 
     print("Aktualisiere die Konfiguration...")
     update_config()
