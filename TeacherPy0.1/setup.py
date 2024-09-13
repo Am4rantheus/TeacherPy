@@ -3,6 +3,7 @@ import sys
 import subprocess
 import json
 import time
+import win32com.client
 import tkinter as tk
 from tkinter import messagebox
 import colorama
