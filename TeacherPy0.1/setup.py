@@ -3,6 +3,9 @@ import sys
 import subprocess
 import json
 import time
+import win32com.client
+import tkinter as tk
+from tkinter import messagebox
 
 # Ermittle den absoluten Pfad zum aktuellen Skript
 current_script_path = os.path.abspath(__file__)
@@ -142,7 +145,6 @@ def update_config():
 
     print("Konfiguration wurde erfolgreich aktualisiert.")
 
-
 def open_and_grant_permissions_to_templates():
     template_dir = os.path.join(current_dir, 'Vorlage')
     if not os.path.exists(template_dir):
@@ -158,7 +160,7 @@ def open_and_grant_permissions_to_templates():
     print("Öffne Vorlagendateien und erteile Berechtigungen...")
     
     word = win32com.client.Dispatch("Word.Application")
-    word.Visible = False
+    word.Visible = True
 
     for file in template_files:
         file_path = os.path.join(template_dir, file)
@@ -166,30 +168,26 @@ def open_and_grant_permissions_to_templates():
         try:
             doc = word.Documents.Open(file_path)
             
-            # Versuche, die Bearbeitung zu aktivieren
-            try:
-                doc.Protect(Type=0)  # 0 bedeutet keine Schutzart
-            except:
-                print(f"Konnte den Schutz für {file} nicht aufheben.")
+            # Zeige Nachricht für manuelle Bearbeitung
+            root = tk.Tk()
+            root.withdraw()
+            messagebox.showinfo("Berechtigungen erteilen", f"Bitte erteilen Sie manuell die Bearbeitungsberechtigungen für {file} in Word und schließen Sie dann die Datei.")
             
-            # Aktiviere die Bearbeitung für geschützte Ansicht
-            try:
-                if word.Application.ActiveProtectedViewWindow is not None:
-                    word.Application.ActiveProtectedViewWindow.Edit()
-            except:
-                print(f"Konnte die geschützte Ansicht für {file} nicht bearbeiten.")
+            # Warte, bis der Benutzer die Datei geschlossen hat
+            while True:
+                try:
+                    doc.Close(SaveChanges=True)
+                    break
+                except:
+                    time.sleep(1)
             
-            # Speichere die Änderungen
-            doc.Save()
-            
-            doc.Close()
             print(f"{file} wurde geöffnet, Berechtigungen erteilt und geschlossen.")
         except Exception as e:
             print(f"Fehler beim Öffnen von {file}: {str(e)}")
 
     word.Quit()
     print("Alle Vorlagendateien wurden verarbeitet.")
-    
+
 def create_shortcut():
     try:
         import winshell
