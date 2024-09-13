@@ -2,6 +2,7 @@ import os
 import sys
 import subprocess
 import json
+import time
 
 # Ermittle den absoluten Pfad zum aktuellen Skript
 current_script_path = os.path.abspath(__file__)
@@ -141,6 +142,44 @@ def update_config():
 
     print("Konfiguration wurde erfolgreich aktualisiert.")
 
+def open_and_close_template_files():
+    template_dir = os.path.join(current_dir, 'Vorlage')  # Verzeichnis auf 'Vorlage' geändert
+    if not os.path.exists(template_dir):
+        print(f"Verzeichnis {template_dir} nicht gefunden.")
+        return
+
+    template_files = [f for f in os.listdir(template_dir) if f.endswith(('.dotx', '.ott'))]
+    
+    if not template_files:
+        print("Keine .dotx oder .ott Dateien im Vorlagen-Verzeichnis gefunden.")
+        return
+
+    print("Öffne Vorlagendateien...")
+    
+    try:
+        import win32com.client
+    except ImportError:
+        print("win32com.client konnte nicht importiert werden. Stellen Sie sicher, dass pywin32 installiert ist.")
+        return
+
+    word = win32com.client.Dispatch("Word.Application")
+    word.Visible = False
+
+    for file in template_files:
+        file_path = os.path.join(template_dir, file)
+        print(f"Öffne {file}...")
+        try:
+            doc = word.Documents.Open(file_path)
+            # Warte kurz, um eventuelle Dialoge zu ermöglichen
+            time.sleep(2)
+            doc.Close()
+            print(f"{file} wurde geöffnet und geschlossen.")
+        except Exception as e:
+            print(f"Fehler beim Öffnen von {file}: {str(e)}")
+
+    word.Quit()
+    print("Alle Vorlagendateien wurden verarbeitet.")
+
 def create_shortcut():
     try:
         import winshell
@@ -177,6 +216,9 @@ def main():
     print("Installiere erforderliche Bibliotheken...")
     required = get_required_libraries()
     install_missing_libraries(required)
+
+    print("Öffne und schließe Vorlagendateien...")
+    open_and_close_template_files()
 
     print("Aktualisiere die Konfiguration...")
     update_config()
