@@ -165,12 +165,24 @@ def open_and_grant_permissions_to_templates():
         print(f"Öffne {file}...")
         try:
             doc = word.Documents.Open(file_path)
-            # Hier können Sie zusätzliche Aktionen durchführen, um Berechtigungen zu erteilen
-            # Zum Beispiel:
-            # doc.Permission.AllowEditing = True
-            # doc.Permission.AllowPrinting = True
-            time.sleep(2)  # Warte kurz, um eventuelle Dialoge zu ermöglichen
-            doc.Close(SaveChanges=True)
+            
+            # Versuche, die Bearbeitung zu aktivieren
+            try:
+                doc.Protect(Type=0)  # 0 bedeutet keine Schutzart
+            except:
+                print(f"Konnte den Schutz für {file} nicht aufheben.")
+            
+            # Aktiviere die Bearbeitung für geschützte Ansicht
+            try:
+                if word.Application.ActiveProtectedViewWindow is not None:
+                    word.Application.ActiveProtectedViewWindow.Edit()
+            except:
+                print(f"Konnte die geschützte Ansicht für {file} nicht bearbeiten.")
+            
+            # Speichere die Änderungen
+            doc.Save()
+            
+            doc.Close()
             print(f"{file} wurde geöffnet, Berechtigungen erteilt und geschlossen.")
         except Exception as e:
             print(f"Fehler beim Öffnen von {file}: {str(e)}")
