@@ -1,29 +1,53 @@
 # TeacherPy
 
 TeacherPy ist ein pythonbasiertes Werkzeug zur Erstellung und Verwaltung von Stundenverlaufsplänen, der automatisierten PDF-Erstellung von Arbeitsblättern mit und ohne Erwartungsbildern und vielfältigen Möglichkeiten zur einfachen Dateiverwaltung für Lehrerinnen und Lehrer!
-
+---
 ## Installation
+ ### Vorbereitung
+   1. Python im Windows Store installieren (empfohlen wird Python 3.12) ![python installieren](https://github.com/user-attachments/assets/26583b5c-436b-466e-b2b9-20afd606d339)
+   2. Den Ordner '/TeacherPy' öffnen
+   3. Im Verzeichnis `setup.py` ausführen. ![setup py](https://github.com/user-attachments/assets/4258b843-856f-4afe-8515-eaecf0e558ea)
+   4. Folgen Sie den Anweisungen auf dem Bildschirm.
+ ### Installationsschritte
 
-1. Python im Windows Store installieren (empfohlen wird Python 3.12) ![python installieren](https://github.com/user-attachments/assets/26583b5c-436b-466e-b2b9-20afd606d339)
-2. Den Ordner '/TeacherPy' öffnen
-3. Im Verzeichnis `setup.py` ausführen. ![setup py](https://github.com/user-attachments/assets/4258b843-856f-4afe-8515-eaecf0e558ea)
+  Das Skript führt Sie durch folgende Schritte:
 
-4. setup.py installiert alle benötigten Pakete und fragt nach Pfaden zu Basisordner, USB-Ordner und ob ein Notiz-Ordner gewünscht ist, außerdem nach den gewünschten Optionen für die zukünftig zu planenden Stunden. ![Fragen beim ersten Ausführen](https://github.com/user-attachments/assets/47b52f5f-3097-4198-a88a-6083dda3bf03)
-   > **Hinweis:** TeacherPy ist in der Lage, mit Clouddatein umzugehen, sofern Sie diese als virtuelles Laufwerk eingebunden haben. Verwenden Sie hierfür einfach den entsprechenden Ordnerpfad z.B. C:\Users\Name\OneDrive. Der USB-Ordner sollte zu einem USB-Laufwerk führen, welches für die reibungslose Nutzung mit dem PC verbunden sein muss, wenn Sie TeacherPy nutzen.
+ 1. **Paketinstallation**: Erforderliche Python-Pakete werden automatisch installiert.
+
+  2. **Vorlagenkonfiguration**: Sie werden aufgefordert, die Vorlagendatei manuell zu öffnen und Bearbeitungsberechtigungen zu erteilen.![Zugang Vorlage erstatten](https://github.com/user-attachments/assets/f4b5ed16-5419-49b6-98b8-98ccb5389ddb)
+
+![geschützte Ansicht](https://github.com/user-attachments/assets/da55a07d-b8d2-4121-81ad-f0482fee1281)
+
+       
+
+ 3. **Benutzerkonfiguration**: Sie können verschiedene Einstellungen anpassen, wie:
+         - Pfade für Basis-, Notiz- und USB-Ordner
+         - Standard-Lehrername
+         - Zeitslots für den Stundenplan
+
+  4. **Verknüpfungserstellung**: Eine Desktopverknüpfung für TeacherPy wird erstellt.
+
    
-5. Ist die Installation erfolgreich, wird eine Verknüpfung "TeacherPy" im Verzeichnis von TeacherPy erstellt, die auf den Desktop verschoben werden kann. ![Verknüpfung](https://github.com/user-attachments/assets/bd0a9693-1d53-4885-b9d7-b07acc986185)
+6. Ist die Installation erfolgreich, wird eine Verknüpfung "TeacherPy" im Verzeichnis von TeacherPy erstellt, die auf den Desktop verschoben werden kann. ![Verknüpfung](https://github.com/user-attachments/assets/bd0a9693-1d53-4885-b9d7-b07acc986185)
 
-6. Beim Doppelklick auf die Verknüpfung öffnet sich das Programm.
+7. Beim Doppelklick auf die Verknüpfung öffnet sich das Programm.
 > **Hinweis:** Sollte TeacherPy das erste Mal ausgeführt werden, kann es bei der Öffnung der SVP_Datei.docx zu einer Fehlermeldung kommen. In diesem Fall navigieren Sie bitte ins Verzeichnis /TeacherPy/Vorlage und öffnen Sie einmalig die Datei SVP_Vorlage.dotx. Nun müssen Sie die geschützte Ansicht aufheben, indem Sie die Berechtigung zur Bearbeitung erteilen. Erstellen Sie danach die Stunde erneut mit dem gleichen Namen und setzten Sie die Bearbeitung fort. 
 
+ ### Fehlerbehebung
+   Bei Problemen während der Installation:
+ - Stellen Sie sicher, dass Sie über Administratorrechte verfügen.
+- Überprüfen Sie Ihre Internetverbindung für die Paketinstallation.
+ - Stellen Sie sicher, dass alle erforderlichen Dateien im Installationsverzeichnis vorhanden sind.
 
+> **Hinweis:** TeacherPy ist in der Lage, mit Clouddatein umzugehen, sofern Sie diese als virtuelles Laufwerk eingebunden haben. Verwenden Sie hierfür einfach den entsprechenden Ordnerpfad z.B. C:\Users\Name\OneDrive. Der USB-Ordner sollte zu einem USB-Laufwerk führen, welches für die reibungslose Nutzung mit dem PC verbunden sein muss, wenn Sie TeacherPy nutzen.
+---
 ## TeacherPy - Funktionen
 
 TeacherPy bietet drei Optionen:
 1. Das Erstellen einer neuen Stunde im Basisordner.
 2. Das Finalisieren einer Stunde aus dem Basisordner. 
 3. Das Archivieren von gehaltenen Stunden.
-
+---
 ### Eine neue Stunde erstellen
 
 1. Starten Sie TeacherPy über die Verknüpfung "TeacherPy".
@@ -41,7 +65,7 @@ TeacherPy bietet drei Optionen:
 
 
    > **Hinweis:** Für eine optimale Verwendung von TeacherPy wird empfohlen, die Namen der Arbeitsblätter 1zu1 in die Tabellenspalte Materialien/Medien einzutragen. Das Programm kann diese Informationen auslesen und später verwenden. Dazu ist es unerlässlich, die Dateien mit dem Kürzel AB_ zu versehen. 
-
+---
 ### Eine Stunde finalisieren
 
 1. Wählen Sie die Option "2. Eine Stunde finalisieren"
@@ -59,7 +83,7 @@ TeacherPy bietet drei Optionen:
 9. Sie werden gefragt, ob Sie die Dateien direkt auf den USB-Stick kopieren möchten. Wählen Sie die gewünschte Option. ![kopieren auf USB](https://github.com/user-attachments/assets/08a87a75-347a-41d8-b1b8-bba1e7d02a08)
 
 10. Ihre Dateien werden auf den USB-Stick kopiert.
-
+---
 ### Eine Stunde archivieren
 
 1. Wählen Sie die Option "3. Eine abgeschlossene Stunde archivieren" 
@@ -72,7 +96,7 @@ TeacherPy bietet drei Optionen:
    c) den gesamten Ordner (Bilder, Präsentationen, Videos, Dokumente, Unterordner) in den Basisordner zu verschieben
 
 5. Sie werden gefragt, ob Sie die Dateien auf dem Stick behalten möchten oder nicht. Verneinen Sie dies, werden die Dateien gelöscht! ![Archiv gelöscht](https://github.com/user-attachments/assets/895530f5-5b6f-4206-9959-8cd40222f636)
-
+---
 
 ## Allgemeine Nutzungshinweise
 
@@ -82,14 +106,14 @@ Abkürzungen, mit denen TeacherPy aktuell arbeitet sind:
 - LB_ für Leistungsbewertungen
 
 In der project-config.json lassen sich weitere Funktionen aktivieren und deaktivieren.
-
+---
 ## Fehlerbehebung
 
 TeacherPy ist in der Entwicklung, es kann nicht für einen fehlerfreien Ablauf garantiert werden. Sollten Sie Fehler vorfinden, informieren Sie mich bitte und ich versuche, die Fehler zu beheben. 
 Sollten Sie falsche oder irrtümliche Eingaben durchführen und das Skript deswegen Fehlermeldungen ausgeben, wiederholen Sie den Schritt, welchen Sie durchführen wollten und prüfen Sie, ob dies den Fehler bereits behebt.
 
 Der Ersteller dieses Programms übernimmt keinerlei Verantwortung für den Verlust von sensiblen Daten. Bitte gehen Sie sicher, dass Sie Ihre Daten jederzeit gesichert haben, bevor Sie sie verschieben, löschen oder verändern, um einen Datenverlust zu vermeiden. 
-
+---
 ## Lizenz
 
 ©Am4ranth/Am4rantheus
