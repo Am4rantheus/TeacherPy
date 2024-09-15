@@ -1,6 +1,6 @@
 # TeacherPy
 
-TeacherPy ist ein pythonbasiertes Werkzeug zur Erstellung und Verwaltung von Stundenverlaufsplänen, der automatisierten PDF-Erstellung von Arbeitsblättern mit und ohne Erwartungsbildern und vielfältigen Möglichkeiten zur einfachen Dateiverwaltung für Lehrerinnen und Lehrer!
+TeacherPy ist ein Python-basiertes Windows-Tool, das Lehrerinnen und Lehrern bei der Erstellung und Verwaltung von Stundenverläufen unterstützt. Es bietet Funktionen zur automatischen Erstellung von PDFs für Arbeitsblätter, sowohl mit als auch ohne Lösungsvorschläge, sowie vielseitige Optionen für eine unkomplizierte Dateiverwaltung.
 ---
 ## Installation
  ### Vorbereitung
